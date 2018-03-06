@@ -6,7 +6,7 @@ module.exports = (form) => {
         service: 'hotmail',
         auth:{
             user:'fn_venezuela@hotmail.com',
-            pass:'Osaka6188'
+            pass:'*********'
         }
     });
 
