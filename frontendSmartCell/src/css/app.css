@@ -1,0 +1,215 @@
+:root{
+    --main-color: #F37272;
+    --secondary-color:#424DB8;
+    --color-alternative: #584E4A;
+    --white-color:#fff;
+
+    --snap-cubic:cubic-bezier(1.000, 0.005, 0.240, 1.000);
+    --bounce-cubic:cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    --main-font: 'Roboto', sans-serif;
+    --secondary-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+/**
+ * main variables for the css file
+ */
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+ /** 
+  *  reset for the browsers
+ * http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html,
+body{
+    font-size: 15px;
+    font-family: var(--main-font);
+    /* background: var(--white-color); */
+    overflow-x: hidden;
+}
+.main_wrapper{
+    height: 100%;
+    background: var(--color-alternative);
+}
+/**
+ * header css 
+ */
+header {
+    background:var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+.nav_logo{
+    display: block;
+    width: 100px;
+}
+.nav_logo img{
+    width: 100%;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #f3f3f3;
+    min-width: 80vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -100%;
+}
+.nav_link{
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+    /* outline: 1px solid red; */
+    margin-top: 1rem;
+    /* background: #000; */
+    color: #282C34;
+    display: block;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+}
+.nav_link:hover{
+    color: #f3f3f3;
+    background: #282C34;
+}
+
+nav .social{
+    margin-top: 3rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+.social a{
+    /* background: #000; */
+    color: var(--main-color);
+    display: block;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    transition: all 0.5s var(--bounce-cubic);
+}
+.social a:hover{
+    color: var(--color-alternative);
+}
+/**
+ * header css 
+*/
+.hero {
+    background: linear-gradient(-45deg, var(--main-color) ,var(--secondary-color));
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+
+    color: var(--white-color);
+    font-weight: 300;
+    line-height: 150%;
+    text-align: center;
+
+    padding:  20px 5%;
+    position: relative;
+
+}
+.hero .hero_img{
+    max-width: 80vw;
+    /* background: #000; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+}
+.hero .hero_img img{
+width: 100%;
+}
+.hero h1{
+    z-index: 100;
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 2px;
+    /* text-transform: uppercase; */
+
+    padding-top: 2rem;
+    margin: 2rem 0;
+}
+.hero h1 small{
+    display: block;
+    line-height: 120%;
+    font-size: 0.9rem;
+    /* text-transform: lowercase; */
+}
+.hero p{
+    font-family: var(--secondary-font);
+    z-index: 100;
+    color: var(--white-color);
+    font-weight: 400;
+    font-size: 1rem;
+}
+/**
+ * HERO CSS END 
+ */
+.content{
+    overflow-y: hidden;
+    min-height: 200vh;
+    padding: 50px 20%;
+    background: var(--white-color);
+}
