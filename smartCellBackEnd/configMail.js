@@ -1,31 +1,30 @@
 const nodemailer = require('nodemailer');
+const person = require('./contra');
 
-module.exports = (form) => {
+module.exports = (formulario) => {
+ var transporter = nodemailer.createTransport({
+ service: 'Gmail',
+ auth: {
+ user: 'daytonacellrepair@gmail.com', // Cambialo por tu email
+ pass: `${person.password}` // Cambialo por tu password
+ }
+ });
 
-    var transport = nodemailer.createTransport({
-        service: 'hotmail',
-        auth:{
-            user:'fn_venezuela@hotmail.com',
-            pass:'*********'
-        }
-    });
+const mailOptions = {
+ from: `”${formulario.name} 👻” <${formulario.email}>`,
+ to: `${formulario.email}`, // Cambia esta parte por el destinatario
+ subject: formulario.subject,
+ html: `
+ <strong>Nombre:</strong> ${formulario.name} <br/>
+ <strong>E-mail:</strong> ${formulario.email} <br/>
+ <strong>Mensaje:</strong> ${formulario.msg}
+ `
+ };
 
-    const mailOption = {
-        from:`"${form.name} " <${form.email}>`,
-        to:'Dest',
-        subject: form.subject,
-        html:`
-        <strong>Name:</strong>${form.name}</br>
-        <strong>Email:</strong>${form.email}</br>
-        <strong>Message:</strong>${form.msg}</br>
-        `
-    };
-
-    transport.sendMail(mailOption,function(err,info){
-        if(err)
-            console.log(err);
-        else
-            console.log(info);
-
-    });
-};
+transporter.sendMail(mailOptions, function (err, info) {
+ if (err)
+ console.log(err)
+ else
+ console.log(info);
+ });
+}

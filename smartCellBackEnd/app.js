@@ -14,9 +14,8 @@ app.get('/', (req , res) => {
 });
 
 app.post('/form', (req,res) => {
-    console.log(req.body);
+  // console.log(req.body);
     configMail(req.body);
-
     res.status(200).send();
 });
 
