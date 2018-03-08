@@ -10,9 +10,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req , res) => {
-    res.send('Hello world');
+    res.send('<h1>Hello world </h1>');
 });
-
 app.post('/form', (req,res) => {
   // console.log(req.body);
     configMail(req.body);
