@@ -1,7 +1,7 @@
 :root {
-    --main-color: #F37272;
+    --main-color: #889dbb;
     --secondary-color: #424DB8;
-    --color-alternative: #584E4A;
+    --color-alternative: #232730;
     --white-color: #f3f3f3;
     --snap-cubic: cubic-bezier(1.000, 0.005, 0.240, 1.000);
     --bounce-cubic: cubic-bezier(0.175, 0.885, 0.320, 1.275);
@@ -345,7 +345,7 @@ nav .social {
 .content {
     overflow-y: hidden;
     min-height: 100vh;
-    padding: 50px 2%;
+    padding: 50px 0;
     background: var(--white-color);
 }
 .cards{
@@ -353,8 +353,9 @@ nav .social {
     max-width: 1200px;
     /* padding: 2rem; */
     /* margin-top:rem; */
+    margin: 0 auto;
+    padding: 0 2%;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-
 }
 .card{
     text-align: center;
@@ -362,10 +363,14 @@ nav .social {
     margin: 0.5rem 0 1rem;
     color: #584E4A;
     background: #fff;
+    border-radius: 5px;
 }
 .card_img{
     background: #fff;
     padding: 1rem 0;
+}
+.card_img img{
+    max-width: 200px;
 }
 .card_title{
     font-size: 2rem;
@@ -382,3 +387,69 @@ nav .social {
     font-size: 0.9rem;
     padding:1rem 0.5rem;
 }
+
+/**
+ * cards end here
+ */
+
+ .service{
+     background: var(--color-alternative);
+     color: var(--main-color);
+     padding: 2rem 0 0;
+ }
+ .title{
+     font-size: 1.4rem;
+     text-transform: uppercase;
+     /* padding: 1rem; */
+     font-weight: 700;
+     font-family: var(--main-font);
+     line-height: 150%;
+     max-width: 90vw;
+     color: var(--main-color);
+     margin: 2rem auto;
+ }
+ .title_body{
+     margin: 0 auto 1rem;
+     /* padding: 1rem; */
+     max-width: 90vw;
+     font-size: 1rem;
+     line-height: 150%;
+ }
+ .card_service{
+     background: inherit;
+     color: inherit;
+     line-height: 150%;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+ .card_service .card_img{
+     background: inherit;
+     padding: 0;
+     flex-basis: 20vw;
+     
+ }
+ .card_service .card_img img{
+     width: 100%;
+ }
+ .card_service .card_title{
+     font-size: 1.4rem;
+     letter-spacing: 1px;
+     padding: 0;
+     flex-basis: 65vw;
+ }
+.card_service .card_body{
+    font-size: 1rem;
+}
+.service .img{
+    max-width: 80vw;
+    display: block;
+    margin: 0 auto -1.3rem;
+}
+.service .img img{
+    width: 100%;
+}
+/**
+ * Service section end
+ */

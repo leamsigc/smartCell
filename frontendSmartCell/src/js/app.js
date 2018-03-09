@@ -9,8 +9,4 @@ window.addEventListener('DOMContentLoaded', function () {
         console.log('click');
         menu.classList.toggle('active');
     });
-
-    document.querySelector('.content').addEventListener('click', () => {
-        content.removeClass('active');
-    });
 });
