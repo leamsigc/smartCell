@@ -43,32 +43,33 @@
 			</a>
 			<span class="menu_toggle">
 				<i class="menu_open fa fa-bars fa-lg"></i>
-
 			</span>
 			<nav>
-				<a href="#" class="nav_link">Home</a>
-				<a href="#" class="nav_link">Work</a>
-				<a href="#" class="nav_link">Contact</a>
+				<a href="#HOME" class="nav_link">Home</a>
+				<a href="#WORK" class="nav_link">Work</a>
+				<a href="#CONTACT" class="nav_link">Contact</a>
+				<a href="tel:386-795-2423"  class="nav_link">tel:386-795-2423 </a>
+
 				<div class="social">
-					<a href="" class="social_link">
+					<a href="https://www.facebook.com/smartcellrepairsouthdaytona/" target="_blank" class="social_link">
 						<i class="fa fa-facebook"></i>
 					</a>
-					<a href="" class="social_link">
+					<a href="https://twitter.com/SmartCellRepair" target="_blank" class="social_link">
 						<i class="fa fa-twitter"></i>
 					</a>
-					<a href="" class="social_link">
-						<i class="fa fa-code"></i>
+					<a href="tel:386-795-2423" class="social_link">
+						<i class="fa fa-phone"></i>
 					</a>
-					<a href="" class="social_link">
+					<a href="https://www.instagram.com/SmartCellRepair/"  target="_blank" class="social_link">
 						<i class="fa fa-instagram"></i>
 					</a>
 				</div>
 			</nav>
 		</header>
 		<!-- HEADER END HERE  -->
-		<section class="hero">
+		<section class="hero" id="HOME">
 			<div class="hero_img">
-				<!-- <img src="./img/phonebroke.png" alt=""> -->
+				<img src="./img/iphone_hero.png" alt="">
 			</div>
 			<h1> WE ARE HERE TO HELP YOU TODAY!
 				<small>
@@ -78,12 +79,13 @@
 			<p>
 				Your gadgets play a major role in your professional, personal and school life. When your phone, tablet, or laptop breaks,
 				you want an expert to handle the repair. That’s where we come in. With over a decade of experience in the electronics
-				repair industry, CPR Cell Phone Repair can get the job done quickly and effectively.
+				repair industry,Smart cell Repair can get the job done quickly and effectively.
 			</p>
-
-			<a href="" class="btn btn-main">Start your Repair</a>
+			<div >
+			<a href="#CONTACT" class="btn btn-main">Start your Repair</a>
+			</div>
 		</section>
-		<main class="content">
+		<main class="content" >
 			<div class="cards">
 				<div class="card">
 					<div class="card_img">
@@ -122,7 +124,7 @@
 						<h2>Tablet Repair Services</h2>
 					</div>
 					<div class="card_body">
-						<p> we take iPad repair services very seriously. This isn’t a hobby for us. It’s what we do. We work on all models and
+						<p> We take iPad repair services very seriously. This isn’t a hobby for us. It’s what we do. We work on all models and
 							have fixed nearly every type of problem. From cracked screens and broken dock connectors to malfunctioning home buttons
 							and more. We get repairs made quickly so your iPad is back in your hands. And, with a limited lifetime warranty on
 							parts and service, you’ll have peace of mind that if anything does go wrong, you’re covered.</p>
@@ -130,7 +132,7 @@
 				</div>
 			</div>
 			<!-- card end -->
-			<section class="service">
+			<section class="service" id="WORK">
 				<h2 class="title">What would you like to fix today?</h2>
 				<p class="title_body">Don’t let damaged phones, tablets, and laptops put a damper on your productivity. Depend on Us for all of your business
 					and school repair needs.</p>
@@ -140,8 +142,10 @@
 					</div>
 					<div class="card_title">Cracked Screen</div>
 					<div class="card_body">
+						<p>
 						Cracked screen replacement services are both fast and affordable. In fact, a majority of iPhone screen repairs can be completed
 						within one business day, if not while you wait in-store.
+						</p>
 					</div>
 				</div>
 				<div class="card card_service">
@@ -150,8 +154,11 @@
 					</div>
 					<div class="card_title">Water Damage</div>
 					<div class="card_body">
+						<p>
 						If your iPhone is suffering from Water Damage. We will perform a professional diagnostic to determine the extent of the damage,
 						clean out the device, flush out any debris and test accordingly.
+						</p>
+					</div>
 					</div>
 					<div class="card card_service">
 						<div class="card_img">
@@ -159,28 +166,83 @@
 						</div>
 						<div class="card_title">Broken Buttons</div>
 						<div class="card_body">
+							<p>
 							If you find the buttons on your iPad are malfunctioning or not working altogether, be sure to visit your local Us. Our repair
 							technicians can resolve the problem quickly and affordably.
+							</p>
 						</div>
 					</div>
-					<a href="" class="btn btn-main">Start your Repair</a>
+					<div class="btn_container">
+						<a href="#CONTACT" class="btn btn-main">Start your Repair</a>
+					</div>
 					<div class="img">
 						<img src="./img/home-devices.jpg" alt="image of all home device like ipad iphone and many more...">
 					</div>
 			</section>
 			<!-- service end -->
-			<section class="contact">
+			<section class="contact" id="CONTACT">
 				<div class="title">Question Comments?
 					<br>
 					<strong>Let us Know!</strong>
 				</div>
 				<p class="title_body">Our customer service staff loves helping people. If you're having trouble with something we'll do our best to help! </p>
 				<div class="contact_img">
-					<img src="" alt="">
+
 				</div>
-				<div class="form"></div>
+				<div class="form">
+					<form action="" method="POST" id="contact">
+						<fieldset>
+							<input type="text" placeholder="Your name" class="contact_input"  tabindex="1" required>
+						</fieldset>
+						<fieldset>
+							<input type="email" class="contact_input" placeholder="Your Email Address" tabindex="2">
+						</fieldset>
+						<fieldset>
+							<input type="tel" class="contact_input" tabindex="3" placeholder="Your Phone Number" required>
+						</fieldset>
+						<fieldset>
+							<textarea name="msg" class="contact_input" id="msg" cols="30" rows="10" tabindex="4" placeholder="Type your Message Here..."
+							    required></textarea>
+						</fieldset>
+						<fieldset>
+							<button type="submit" name="submit" id="contact_btn_js"> Send</button>
+						</fieldset>
+					</form>
+				</div>
 			</section>
+			<!-- end contact section  -->
 		</main>
+		<!-- end main -->
+
+		<footer>
+			<h1 class="title"> smart cell Repair.llc</h1>
+			<ul>
+				<li class="service_list nav_link">Smartphone Repair</li>
+				<li class="service_list nav_link">Iphone Repair</li>
+				<li class="service_list nav_link">Ipad / Tablet Repair</li>
+				<li class="service_list nav_link">And Much More</li>
+				<li class="service_link">
+								<a href="tel:386-795-2423"  class="btn btn-main">call Now</a>
+				</li>
+			</ul>
+			<div class="social">
+				<a href="" class="social_link">
+					<i class="fa fa-facebook"></i>
+				</a>
+				<a href="" class="social_link">
+					<i class="fa fa-twitter"></i>
+				</a>
+				<a href="tel:386-795-2423" class="social_link">
+					<i class="fa fa-phone"></i>
+				</a>
+				<a href="" class="social_link">
+					<i class="fa fa-instagram"></i>
+				</a>
+			</div>
+			<h3>Have a Question ?
+				<a href="tel:386-795-2423" class=""> Contact Us</a>
+			</h3>
+		</footer>
 		</div>
 		<script src="./js/app.js"></script>
 </body>

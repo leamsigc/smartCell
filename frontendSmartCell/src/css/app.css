@@ -19,6 +19,14 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background:var(--secondary-color); /* WebKit/Blink Browsers */
+    color: var(--white-color)
+  }
+  ::-moz-selection {
+    background: var(--color-alternative);
+    color: var(--white-color) /* Gecko Browsers */
+  }
 /** 
   *  reset for the browsers
  * http://meyerweb.com/eric/tools/css/reset/ 
@@ -164,6 +172,7 @@ body {
     font-family: var(--main-font);
     /* background: var(--white-color); */
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .main_wrapper {
@@ -176,11 +185,11 @@ body {
  */
 
 header {
-    background: var(--white-color);
+    background: #FFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.5rem 5% ;
 }
 
 .nav_logo {
@@ -231,7 +240,7 @@ nav.active{
     background: #282C34;
 }
 
-nav .social {
+ .social {
     margin-top: 3rem;
     font-size: 2rem;
     display: flex;
@@ -264,7 +273,7 @@ nav .social {
 */
 
 .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://source.unsplash.com/XQdcBNRM8IY');
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)), url('https://source.unsplash.com/XQdcBNRM8IY');
     background-repeat: no-repeat;
     background-size: cover;
     background-position:  10% center;
@@ -284,11 +293,12 @@ nav .social {
 }
 
 .hero .hero_img {
-    max-width: 80vw;
+    display: none;
+    max-width: 40%;
     /* background: #000; */
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 1;
 }
 
@@ -343,7 +353,7 @@ nav .social {
  */
 
 .content {
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     min-height: 100vh;
     padding: 50px 0;
     background: var(--white-color);
@@ -366,11 +376,13 @@ nav .social {
     border-radius: 5px;
 }
 .card_img{
+    margin: 1rem auto;
+    width: 100px;
     background: #fff;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 .card_img img{
-    max-width: 200px;
+    width: 100%;
 }
 .card_title{
     font-size: 2rem;
@@ -400,22 +412,25 @@ nav .social {
  .title{
      font-size: 1.4rem;
      text-transform: uppercase;
-     /* padding: 1rem; */
      font-weight: 700;
      font-family: var(--main-font);
      line-height: 150%;
-     max-width: 90vw;
+     max-width: 1200px;
+     width: 90%;
      color: var(--main-color);
      margin: 2rem auto;
  }
  .title_body{
+     max-width:1200px;
+     width: 90%;
      margin: 0 auto 1rem;
      /* padding: 1rem; */
-     max-width: 90vw;
      font-size: 1rem;
      line-height: 150%;
  }
  .card_service{
+     max-width: 1200px;
+     margin: 0 auto;
      background: inherit;
      color: inherit;
      line-height: 150%;
@@ -427,7 +442,7 @@ nav .social {
  .card_service .card_img{
      background: inherit;
      padding: 0;
-     flex-basis: 20vw;
+     flex-basis: 20%
      
  }
  .card_service .card_img img{
@@ -441,11 +456,17 @@ nav .social {
  }
 .card_service .card_body{
     font-size: 1rem;
+    /* max-width: 90%; */
+
 }
 .service .img{
-    max-width: 80vw;
+    max-width: 500px;
     display: block;
     margin: 0 auto -1.3rem;
+}
+.btn_container{
+    min-width: 100vw;
+    text-align: center;
 }
 .service .img img{
     width: 100%;
@@ -453,3 +474,267 @@ nav .social {
 /**
  * Service section end
  */
+.contact{
+    text-align: center;
+    line-height: 150%;
+}
+.form{
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.form form{
+    padding: 1.5rem 1%;
+    margin: 2.5rem 0 ;
+}
+.contact_input {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--secondary-font);
+
+    width: 100%;
+    border: 1px solid var(--main-color);
+    background: var(--white-color);
+    margin: 0 0 0.3rem;
+
+    padding: 0.7rem;
+    transition: border-color 0.3s ease-in-out;
+}
+fieldset .contact_input:hover{
+    border: 1px solid var(--color-alternative);
+}
+fieldset {
+    border: medium none;
+    margin: 0 0 .7rem;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
+}
+fieldset textarea{
+    height: 100px;
+    max-width: 100%;
+    resize: auto;
+}
+.form button[type='submit']{
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid transparent;
+    background: var(--secondary-color);
+
+    color: var(--white-color);
+    font-weight: 700;
+
+    margin-bottom: 0.3rem;
+    padding: .8rem ;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: background-color 0.5s ease-in-out,
+                border-color 0.3s ease-in-out;
+
+}
+
+.form button[type='submit']:hover{
+    background: var(--white-color);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+::-webkit-input-placeholder {
+    color:var(--main-color);
+   }
+   :-moz-placeholder {
+    color:var(--main-color);
+   }
+   ::-moz-placeholder {
+    color:var(--main-color);
+   }
+   :-ms-input-placeholder {
+    color:var(--main-color);
+   }
+/**
+ * footer start here
+ */
+footer{
+    color: var(--white-color);
+    max-width: 100vw;
+}
+footer .title{
+    text-align: center;
+}
+footer ul{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;text-align: center;
+
+}
+.service_list{
+    color: var(--white-color);
+    font-weight: 400;
+    text-transform: none;
+    background: inherit;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    text-align: center;
+}
+footer .social{
+    max-width: 1200;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+footer .social a:hover{
+    color: var(--secondary-color);
+}
+footer h3{
+    padding: 1rem ;
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 1200px;
+    font-weight: 700;
+}
+
+
+/**
+ * Media start here
+ */
+@media (min-width:600px){
+    .hero h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        /* margin-bottom: 3rem; */
+    }
+    .hero h1 small{
+        margin-top: 2rem;
+        font-size: 1.7rem;
+    }
+    .hero p{
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--white-color);
+    }
+
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        box-shadow: none;
+        margin-bottom: 4rem
+    }
+    .card{
+        flex-basis: 49%;
+    }
+    .card_title{
+        font-size: 1.5rem;
+        font-family: var(--secondary-font);
+        color: var(--main-color)
+    }
+    .card_body{
+        font-size: 1rem;
+        font-weight: 500;
+
+    }
+    .card_service{
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+    .service .card_img{
+        max-width: 100px;
+        /* outline: 1px solid red; */
+        margin: 0 1rem;
+    } 
+    .card_service .card_title{
+        /* outline: 1px solid red; */
+        flex-basis: 80%;
+        letter-spacing: 4px;
+        padding: 1rem;
+        text-align:left;
+    }
+    .service .title{
+        margin-top: 4rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .service .card_body{
+        padding: 0;
+    }
+    .service .card_body p{
+        font-size: 1.1rem;
+        width: 80%;
+        padding: 0;
+        margin-left: auto;
+    }
+}
+@media (min-width:1100px){
+   .hero .hero_img{
+       display: block;
+       top: 50%;
+       transform: translate( 0,-50% )
+   }
+   .hero{
+       /* flex-direction: row; */
+       flex-wrap: wrap;
+       align-items: flex-start;
+       /* justify-content: center; */
+       text-align: left;
+   }
+   .hero > * {
+       max-width: 60%;
+       text-align: center;
+   }
+   .hero div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   }
+   .hero h1{
+       text-align: left;
+   }
+   .hero p{
+       text-align: left;
+   }
+   .cards{
+       margin-top: 4rem;
+       margin-bottom: 10rem;
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       grid-template-rows: 500px;
+       grid-gap: 1rem;
+       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+       background: #fff;
+   }
+   .card_service{
+       margin: 0 auto;
+       padding: 0;
+       outline: 1px solid red;
+       display: grid;
+       grid-template-columns: repeat(4,1fr);
+       grid-template-rows: repeat(2,100px);
+       grid-gap: 1rem;
+       grid-template-areas:"img img title title"
+                    "img img body body" ;
+   }
+   .card_service .card_img{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       grid: img;
+       background: #000;
+
+   }
+   .card_service .card_img img{
+       display: block;
+   }
+   .card_service .card_title{
+       /* grid-area: 1 / 1 2 / span 3; */
+       grid: title;
+   }
+   .card_service .card_body{
+       
+      grid-column-start: 2;
+      grid-column-end: 4;
+   }
+}
