@@ -3,8 +3,8 @@
     --secondary-color: rgba(66, 78, 184, 0.986);
     --color-alternative: rgb(35, 39, 48);
     --white-color: #f3f3f3;
-    --snap-cubic: cubic-bezier(1.000, 0.005, 0.240, 1.000);
-    --bounce-cubic: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    /* --snap-cubic: cubic-bezier(1.000, 0.005, 0.240, 1.000);
+    --bounce-cubic: cubic-bezier(0.175, 0.885, 0.320, 1.275); */
     --main-font: 'Roboto', sans-serif;
     --secondary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
@@ -16,8 +16,14 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
+
+::-moz-selection {
+    background:var(--secondary-color); /* WebKit/Blink Browsers */
+    color: var(--white-color)
+  }
 
 ::selection {
     background:var(--secondary-color); /* WebKit/Blink Browsers */
@@ -172,7 +178,8 @@ body {
     font-family: var(--main-font);
     /* background: var(--white-color); */
     overflow-x: hidden;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     position: relative;
 }
 
@@ -193,9 +200,15 @@ header {
     left: 0;
     right: 0;
     z-index: 2000;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 0.5rem 5% ;
 }
 
@@ -215,15 +228,26 @@ nav {
     background: #f3f3f3;
     min-width: 60vw;
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-left: -100%;
+    -webkit-transition: margin-left 0.5s ease-in-out;
     transition: margin-left 0.5s ease-in-out;
     z-index: 1000;
 }
 nav.active{
+    -webkit-transition: margin-left 0.5s ease-in-out;
     transition: margin-left 0.5s ease-in-out;
     margin-left: 0;
 }
@@ -239,6 +263,7 @@ nav.active{
     color: #282C34;
     display: block;
     cursor: pointer;
+    -webkit-transition: background 0.5s ease-in-out;
     transition: background 0.5s ease-in-out;
 }
 
@@ -250,8 +275,12 @@ nav.active{
  .social {
     margin-top: 3rem;
     font-size: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .social a {
@@ -260,6 +289,7 @@ nav.active{
     display: block;
     padding: 0.5rem;
     margin: 0 0.5rem;
+    -webkit-transition: all 0.5s var(--bounce-cubic);
     transition: all 0.5s var(--bounce-cubic);
 }
 
@@ -287,10 +317,17 @@ nav.active{
     background-attachment: fixed;
     /* background: linear-gradient(-45deg, var(--main-color), var(--secondary-color)); */
     min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     /* align-items: center; */
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     color: var(--white-color);
     font-weight: 300;
     line-height: 150%;
@@ -373,7 +410,8 @@ nav.active{
     /* margin-top:rem; */
     margin: 0 auto;
     padding: 0 2%;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 .card{
     text-align: center;
@@ -442,15 +480,23 @@ nav.active{
      background: inherit;
      color: inherit;
      line-height: 150%;
+     display:-webkit-box;
+     display:-ms-flexbox;
      display:flex;
-     justify-content: center;
-     align-items: center;
-     flex-wrap: wrap;
+     -webkit-box-pack: center;
+         -ms-flex-pack: center;
+             justify-content: center;
+     -webkit-box-align: center;
+         -ms-flex-align: center;
+             align-items: center;
+     -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
  }
  .card_service .card_img{
      background: inherit;
      padding: 0;
-     flex-basis: 20%
+     -ms-flex-preferred-size: 20%;
+         flex-basis: 20%
      
  }
  .card_service .card_img img{
@@ -460,7 +506,8 @@ nav.active{
      font-size: 1.4rem;
      letter-spacing: 1px;
      padding: 0;
-     flex-basis: 65vw;
+     -ms-flex-preferred-size: 65vw;
+         flex-basis: 65vw;
  }
 .card_service .card_body{
     font-size: 1rem;
@@ -507,6 +554,7 @@ nav.active{
     margin: 0 0 0.3rem;
 
     padding: 0.7rem;
+    -webkit-transition: border-color 0.3s ease-in-out;
     transition: border-color 0.3s ease-in-out;
 }
 fieldset .contact_input:hover{
@@ -538,6 +586,8 @@ fieldset textarea{
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 3px;
+    -webkit-transition: background-color 0.5s ease-in-out,
+                border-color 0.3s ease-in-out;
     transition: background-color 0.5s ease-in-out,
                 border-color 0.3s ease-in-out;
 
@@ -589,8 +639,12 @@ footer .social{
     max-width: 1200;
     font-size: 1rem;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 footer .social a:hover{
     color: var(--secondary-color);
@@ -630,14 +684,21 @@ footer h3{
     }
 
     .cards{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        box-shadow: none;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-shadow: none;
+                box-shadow: none;
         margin-bottom: 4rem
     }
     .card{
-        flex-basis: 49%;
+        -ms-flex-preferred-size: 49%;
+            flex-basis: 49%;
         margin: 0;
     }
     .card_title{
@@ -651,9 +712,16 @@ footer h3{
         padding: 1rem;
     }
     .card_service{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
-        flex: 1;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
     }
     .service .card_img{
         max-width: 100px;
@@ -662,7 +730,8 @@ footer h3{
     } 
     .card_service .card_title{
         /* outline: 1px solid red; */
-        flex-basis: 80%;
+        -ms-flex-preferred-size: 80%;
+            flex-basis: 80%;
         letter-spacing: 4px;
         padding: 1rem;
         text-align:left;
@@ -686,12 +755,16 @@ footer h3{
    .hero .hero_img{
        display: block;
        top: 50%;
-       transform: translate( 0,-50% )
+       -webkit-transform: translate( 0,-50% );
+               transform: translate( 0,-50% )
    }
    .hero{
        /* flex-direction: row; */
-       flex-wrap: wrap;
-       align-items: flex-start;
+       -ms-flex-wrap: wrap;
+           flex-wrap: wrap;
+       -webkit-box-align: start;
+           -ms-flex-align: start;
+               align-items: flex-start;
        /* justify-content: center; */
        text-align: left;
    }
@@ -700,9 +773,15 @@ footer h3{
        text-align: center;
    }
    .hero div{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
    }
    .hero h1{
@@ -719,7 +798,8 @@ footer h3{
        grid-template-columns: repeat(3, 1fr);
        grid-template-rows: 500px;
        grid-gap: 1rem;
-       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+       -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+               box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
        /* background: #fff; */
    }
    .card_service .card_img img{
@@ -764,8 +844,13 @@ footer h3{
         grid-column-start: 4;
         grid-column-end: 5;
            position: static;
+           display: -webkit-box;
+           display: -ms-flexbox;
            display: flex;
-           flex-direction: row;
+           -webkit-box-orient: horizontal;
+           -webkit-box-direction: normal;
+               -ms-flex-direction: row;
+                   flex-direction: row;
            max-width: 400px;
            height: 100px;
            margin-left: 0;
@@ -775,14 +860,21 @@ footer h3{
         margin-top: 0;
        }
        nav .social{
+           display:-webkit-box;
+           display:-ms-flexbox;
            display:flex;
-           justify-content: center;
-           align-items: center;
+           -webkit-box-pack: center;
+               -ms-flex-pack: center;
+                   justify-content: center;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
            margin: 0;
            font-size: 1.3rem;
        }
        nav .social_link{
            color:var(--color-alternative);
+           -webkit-transition: background 0.3s ease-in-out;
            transition: background 0.3s ease-in-out;
            padding: 1rem;
            border-radius: 50%;
@@ -810,17 +902,29 @@ footer h3{
     }
     .service .btn_container{
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         grid-area: btn;
     }
     .service .img{
         /* background: #000; */
         grid-area: picture;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-end;
-        align-items:flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-box-align:end;
+            -ms-flex-align:end;
+                align-items:flex-end;
         margin-bottom: 0;
     }
     .service .card1{
@@ -864,8 +968,12 @@ footer h3{
         grid-area: contact_sub_title;
     }
     .contact .form{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         grid-area: form;
     }
     .content{
