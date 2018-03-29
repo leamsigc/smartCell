@@ -50,9 +50,9 @@
 ## The Result :
     Desktop:
 
-![Destop view](./desktop.jpg "Desktop view")
+![Desktop view](./desktop.jpg "Desktop view")
 
     Medium Size Device:
-![medium view](./medium.png "Medium view")
+![Desktop view](./medium.png "Medium view")
     Small Device:
 ![Small View](./small.png "Desktop view")
